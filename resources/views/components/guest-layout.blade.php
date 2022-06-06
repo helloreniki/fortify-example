@@ -12,7 +12,12 @@
     <div class="relative bg-white shadow">
       <div class="max-w-7xl mx-auto px-4 sm:px-6">
         @include('partials.menu')
-        @include('partials.header')
+        {{-- if Route is not login/register --}}
+        @if(Route::is('login') ||  Route::is('register'))
+          {{-- include nothing --}}
+        @else
+          @include('partials.header')
+        @endif
       </div>
     </div>
   </div>
