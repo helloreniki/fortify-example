@@ -16,7 +16,7 @@
         @if(Route::is('login') ||  Route::is('register'))
           {{-- include nothing --}}
         @else
-          @include('partials.header')
+          {{-- @include('partials.header') --}}
         @endif
       </div>
     </div>
