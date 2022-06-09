@@ -12,8 +12,6 @@
     <div class="relative bg-white shadow">
       <div class="max-w-7xl mx-auto px-4 sm:px-6">
         @include('partials.menu')
-
-        @include('partials.header')
       </div>
     </div>
   </div>
