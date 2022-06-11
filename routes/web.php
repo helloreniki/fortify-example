@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
@@ -21,3 +22,7 @@ Route::get('/', HomeController::class)->name('home');
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('verified');
 
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile')->middleware('verified');
+
+Route::get('/auth/github/redirect', [LoginController::class, 'redirectToProvider'])->name('auth.github');
+
+Route::get('/auth/github/callback', [LoginController::class, 'handleProviderCallback']);
